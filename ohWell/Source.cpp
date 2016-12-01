@@ -22,14 +22,14 @@ int main()
 	char player1 = '+', player2 = 'x';
 	Board firBoard = iniBoard(height, width);
 	int play = 0; // A variable to determine which player plays
-	while (!isWinner(player1, firBoard) && !isWinner(player2, firBoard))
+	while (!firBoard.isWinner(player1) && !firBoard.isWinner(player2))
 	{
-		boardDisplay(firBoard);
+		firBoard.boardDisplayer();
 		char player = (play % 2 == 0) ? player1 : player2;
-		firBoard.board = addDisc(player, firBoard);
+		firBoard.board = firBoard.addDisc(player);
 		play++;
 	}
-	if (isWinner(player1, firBoard))
+	if (firBoard.isWinner(player1))
 		cout << "Player 1 is the winner !";
 	else
 		cout << "Player 2 is the winner !";

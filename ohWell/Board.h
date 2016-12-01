@@ -1,15 +1,14 @@
 #pragma once
 
-char **addDisc(char, char**, int, int);
-
 struct Board
 {
 	int height, width;
 	char** board;
+
+	void boardDisplayer();
+	bool isWinner(char);
+	char **addDisc(char);
 };
 
 
 Board iniBoard(int, int);
-void boardDisplay(Board);
-bool isWinner(char, Board);
-char **addDisc(char, Board);
